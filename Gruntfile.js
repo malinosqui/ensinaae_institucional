@@ -30,7 +30,7 @@ module.exports = function (grunt) {
                 files: {
                     'dist/js/main.min.js': ['js/modernizr-2.6.2.min.js', 'js/jquery.min.js', 'js/jquery.easing.js',
                         'js/velocity.min.js', 'js/bootstrap.min.js', 'js/jquery.waypoints.min.js', 'js/hoverIntent.js',
-                        'js/superfish.js', 'js/main.js',]
+                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/main.js',]
                 }
             }
         },
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css', 'css/bootstrap.css', 'css/superfish.css', 'css/style.css']
+                    'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css', 'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'css/style.css']
                 }
             }
         },
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             dynamic: {                         // Another target
                 files: [{
                     expand: true,                  // Enable dynamic expansion
-                    cwd: 'images/',                   // Src matches are relative to this path
+                    cwd: 'imgs/',                   // Src matches are relative to this path
                     src: ['**/*.{png,jpg,gif,svg}'],   // Actual patterns to match
                     dest: 'dist/imgs/'                  // Destination path prefix
                 }]
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin', 'imagemin']);
 
 
 };

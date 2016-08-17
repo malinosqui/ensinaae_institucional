@@ -45,21 +45,73 @@
 		}, { offset: '85%' });
 	};
 
+	function validateEmail(email) {
+		var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		return re.test(email);
+	}
+
+	function validate() {
+		var field = $('#email');
+
+		if (!validateEmail(field[0].value)) {
+
+			new PNotify({
+				title: 'E-mail inválido',
+				type: 'error',
+				text: 'Preencha o e-mail correntamente e tente de novo!'
+			});
+
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
 
 	// Document on load.
 	$(function () {
 
+		PNotify.prototype.options.styling = "bootstrap3";
+
+		// configurando firebase
+		var config = {
+			apiKey: "AIzaSyB-SJCUV-h63gIsJmCmRGs46s2DptuWBu8",
+			authDomain: "ensinaae-9ae64.firebaseapp.com",
+			databaseURL: "https://ensinaae-9ae64.firebaseio.com",
+			storageBucket: "ensinaae-9ae64.appspot.com",
+		};
+		firebase.initializeApp(config);
+
+		var database = firebase.database();
+
+
 		mainMenu();
 		contentWayPoint();
 
-		$('#email').bind('change', function () {
+		// $('#email').bind('change', function () {
+		// 	validate();
+		// });
 
-			var field = $('#email');
+		$('#btnLead').bind('click', function () {
 
-			if (!field[0].value)
-				$('#email-error').addClass('show');
-			else
-				$('#email-error').removeClass('show');
+			if (!validate(true)) {
+				return;
+			}
+
+			var email = $('#email')[0].value;
+
+			firebase.database().ref('leads').push({
+				email: email
+			});
+
+			new PNotify({
+				title: 'Cadastrado realizado',
+				text: 'Obrigado por se cadastrar, você vai ser notificado no lançamento da plataforma!'
+			});
+
+			$('#email')[0].value = "";
+
 		});
 
 	});
