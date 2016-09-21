@@ -30,7 +30,8 @@ module.exports = function (grunt) {
                 files: {
                     'dist/js/main.min.js': ['js/modernizr-2.6.2.min.js', 'js/jquery.min.js', 'js/jquery.easing.js',
                         'js/velocity.min.js', 'js/bootstrap.min.js', 'js/jquery.waypoints.min.js', 'js/hoverIntent.js',
-                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/jquery-mask.js', 'js/main.js',]
+                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/jquery-mask.js', 'node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js',
+                        'js/main.js',]
                 }
             }
         },
@@ -41,7 +42,9 @@ module.exports = function (grunt) {
             build: {
                 files: {
                     'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css',
-                        'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'node_modules/mdi/css/materialdesignicons.css', 'css/style.css']
+                        'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'node_modules/mdi/css/materialdesignicons.css',
+                         'css/style.css']
+                         
                 }
             }
         },

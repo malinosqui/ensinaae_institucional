@@ -138,7 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<li>
 										<a href="#equipe" class="fh5co-sub-ddown">EQUIPE</a>
 									</li>
-									<!--<li><a href="#" class="fh5co-sub-ddown btn btn-secondary">COMEÇAR AGORA</a></li>-->
 								</ul>
 							</nav>
 						</div>
@@ -243,16 +242,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 							<h3>Quem somos</h3>
-							<p>A ENSINAAÊ te ajuda a realizar seus objetivos</p>
+							<p>A ENSINAAÊ te ajuda a realizar seus objetivos.</p>
 						</div>
 					</div>
 				</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 animate-box">
-							<span style="display: block;">
-						 Se você é um dos muitos brasileiros que almeja atingir seus objetivos - <b>concurso público, vestibulares, OAB</b>, ou até uma ajudinha naquela prova difícil -, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares espalhados por todo o Brasil e nas mais diversas especialidades, esperando para dar a melhor aula particular para você. Eles irão dar todo apoio que falta para seu sucesso. Olha só como é simples: é só preencher o nosso <a href="#inicio">formulário</a>, falar sobre suas necessidades, como o que deseja aprender, qual horário e data prefere a aula, qual o nível do profissional e o quanto quer pagar e pronto, você irá conhecer diversos professores bem pertinho de você! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora e saia na frente em busca dos seus objetivos! Passar no ENEM ou em concursos públicos nunca foi tão fácil!
-					</span>
+							Se você é um dos muitos brasileiros que almeja atingir seus objetivos - <b>concurso público, vestibulares, OAB</b>,
+							ou até uma ajudinha naquela prova difícil -, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares
+							espalhados por todo o Brasil e nas mais diversas especialidades, esperando para dar a melhor aula particular para
+							você. Eles irão dar todo apoio que falta para seu sucesso. Tudo isso de maneira muito simples: é só preencher o nosso
+							<a href="#inicio">formulário</a>, falar sobre suas necessidades como o que deseja aprender, qual horário e data prefere
+							a aula, qual o nível do profissional e o quanto quer pagar. Pronto você irá conhecer diversos professores bem pertinho
+							de você! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora e saia na frente em busca
+							dos seus objetivos! Passar no ENEM ou em concursos públicos nunca foi tão fácil!
 						</div>
 						<div class="col-lg-4 animate-box">
 							<img src="imgs/iphone.png" alt="Imagem do aplicativo da ensinaê em um celular" style="width: 350px;">
@@ -345,19 +349,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<div class="row">
 								<div class="col-lg-12 col-sm-12">
 									<div class="form-group">
-										<label for="name">Nome completo</label>
+										<label for="name">Nome completo*</label>
 										<input type="text" class="form-control" placeholder="Entre com o seu nome" id="name" name="name">
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-7 col-sm-12">
+								<div class="col-lg-12 col-sm-12">
+									<div class="checkbox">
+										<label>
+										<input type="checkbox" class="checkbox" id="phone-check">
+									Quero ser contatado pelo meu celular
+									</label>
+									</div>
+								</div>
+							</div>
+							<div class="row" id="phone-div" style="display: none;">
+								<div class="col-lg-12 col-sm-12">
+									<div class="form-group">
+										<label for="name">Celular</label>
+										<input type="tel" class="form-control" placeholder="Entre com o seu celular" id="phone" name="phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 col-sm-12">
 									<div class="form-group">
 										<label for="name">E-mail</label>
 										<input type="email" class="form-control" placeholder="Entre com o seu e-mail" id="email" name="email">
 									</div>
 								</div>
-								<div class="col-lg-5 col-sm-12">
+							</div>
+							<div class="row">
+								<div class="col-lg-6 col-sm-12">
+									<div class="form-group">
+										<label for="name">Matéria*</label>
+										<input type="email" class="form-control" id="email" name="email" value="Matemática" disabled>
+									</div>
+								</div>
+								<div class="col-lg-6 col-sm-12">
 									<div class="form-group">
 										<label for="name">Até quanto quer pagar</label>
 										<select class="form-control" id="price" name="price">
@@ -373,7 +403,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<div class="row">
 								<div class="col-lg-6 col-sm-12">
 									<div class="form-group">
-										<label for="name">Data da aula</label>
+										<label for="name">Data da aula*</label>
 										<input type="text" class="form-control" placeholder="Entre com apenas números" id="date" name="date">
 									</div>
 								</div>
@@ -387,7 +417,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="form-group">
-										<label for="name">O que quer aprender</label>
+										<label for="location">Local da aula</label>
+										<input type="text" class="form-control" placeholder="Entre com o seu CEP" id="location" name="location">
+										<!--<label for="name">O que quer aprender</label>
 										<select class="form-control" id="course" name="course">
 											<option value="-1">Selecione uma opção</option>
 											<option value="1">Atualidades</option>
@@ -400,20 +432,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											<option value="8">Inglês</option>
 											<option value="9">Matemática</option>
 											<option value="10">Redação</option>
-										</select>
+										</select>-->
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										<label for="name">Nível do professor</label>
-										<i style="margin-left: 5px;" class="mdi mdi-help-circle" rel="tooltip" data-toggle="tooltip" title="Básico: Matérias do nível fundamental
-										 Médio: Matérias do nível do ensino médio
-										Avançado: Matérias do nível do ensino superior"></i>
+										<label for="name">Nível da matéria</label>
+										<i style="margin-left: 5px;" class="mdi mdi-help-circle" rel="tooltip" data-toggle="tooltip" title="Selecione de acordo com a sua dificuldade, por exemplo, se sua dificuldade é com cálculo, selecione o nível superior."></i>
 										<select class="form-control" id="nivel" name="nivel">
 											<option value="-1">Selecione uma opção</option>
-											<option value="1">Básico</option>
+											<option value="1">Fundamental</option>
 											<option value="2">Médio</option>
-											<option value="3">Avançado</option>
+											<option value="3">Superior</option>
 										</select>
 									</div>
 								</div>

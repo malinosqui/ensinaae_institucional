@@ -20,6 +20,7 @@
     "jshint-stylish": "latest"
   },
   "dependencies": {
+    "easy-autocomplete": "^1.3.5",
     "mdi": "^1.7.22"
   }
 }

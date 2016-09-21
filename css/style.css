@@ -1591,4 +1591,29 @@
   .tooltip-inner {
     white-space: pre-wrap;
   }
+
+  .easy-autocomplete {
+    display: inline-block;
+  }
+
+.easy-autocomplete-container{
+    position: absolute;
+    background-color: #fff;
+    width: 300px;
+    margin-top: 5px;
+}
+
+  .easy-autocomplete-container>ul {
+        list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+    .easy-autocomplete-container>ul>li.selected {
+        background-color: #e1e1e1;
+  }
+
+  .eac-item {
+    color: #364F6B;
+  }
   /*# sourceMappingURL=style.css.map */

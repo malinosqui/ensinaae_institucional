@@ -101,10 +101,24 @@
 
 		$('#date').mask('00/00/0000');
 		$('#hour').mask('00:00');
+		$('#location').mask('00000-000');
+		$('#phone').mask("(00) 00000-0000");
 
-		$(document).ready(function () {
-			$('[data-toggle="tooltip"]').tooltip();
+		$('[data-toggle="tooltip"]').tooltip();
+
+		$("#phone-check").change(function () {
+			if (this.checked)
+				$("#phone-div").css("display", "block");
+			else
+				$("#phone-div").css("display", "none");
 		});
+
+		var options = {
+			data: ["Atualidades", "Biologia", "Espanhol", "Física", "Geografia", "Gramática", "História", "Inglês", "Matemática", "Redação"]
+		};
+
+		$("#_course").easyAutocomplete(options);
+		
 	});
 
 	$('a[href*="#"]:not([href="#"])').click(function () {
