@@ -93,27 +93,18 @@
 		// 	validate();
 		// });
 
-		$('#btnLead').bind('click', function () {
+		$('#btnContinue').bind('click', function () {
 
-			if (!validate(true)) {
-				return;
-			}
-
-			var email = $('#email')[0].value;
-
-			firebase.database().ref('leads').push({
-				email: email
-			});
-
-			new PNotify({
-				title: 'Cadastrado realizado',
-				text: 'Obrigado por se cadastrar, você vai ser notificado no lançamento da plataforma!'
-			});
-
-			$('#email')[0].value = "";
+			// $('#_course').val();
 
 		});
 
+		$('#date').mask('00/00/0000');
+		$('#hour').mask('00:00');
+
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
 	});
 
 	$('a[href*="#"]:not([href="#"])').click(function () {

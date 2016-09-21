@@ -9,11 +9,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ensinaaê - Professores particulares pertinho de você</title>
+	<title>ENSINAAÊ - Professores particulares pertinho de você</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="ENSINAAÊ, é uma plataforma que conecta pessoas a professores particulares. Você escolhe o quê, com quem e onde deseja aprender. Simples assim. Ensina aê, vai!"
 	/>
-	<meta name="keywords" content="professor particular, aula concurso público, professor particular matematica, professor particular português'"
+	<meta name="keywords" content="professor particular, aulas particulares, aula concurso público, professor particular matematica, professor particular português'"
 	/>
 	<meta name="author" content="Ensinaaê" />
 
@@ -53,8 +53,9 @@
 
 	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>-->
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" media="none">
-	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet" media="none">
+	<!--<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet" media="none">-->
 	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
 
 	<!-- Hotjar Tracking Code for http://ensinaae.com.br -->
 	<script>
@@ -104,17 +105,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<h1>Encontre um professor particular pertinho de você</h1>
 						<div class="row">
 							<div class="col-lg-12">
-								<input type="text" placeholder="Digite seu email" class="hero-input" id="email">
-								<span id="email-error">
-									E-MAIL INVÁLIDO! <i class="icon-error"></i>
-								</span>
-								<button class="btn btn-secondary" id="btnLead">Eu quero!</button>
+								<input type="text" placeholder="Digite o que quer aprender" class="hero-input" id="_course">
+								<button class="btn btn-secondary" id="btnContinue" data-toggle="modal" data-target="#myModal">Continuar</button>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12" style="color: #fff;">
-
 						</div>
 					</div>
 				</div>
@@ -159,8 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-							<h3>libere seu potencial</h3>
-							<p>Encontre um professor particular para qual for seu objetivo.</p>
+							<h3>O que posso aprender</h3>
+							<p>Encontre aulas particulares para qual for seu objetivo.</p>
 						</div>
 					</div>
 				</div>
@@ -169,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="col-lg-3 col-md-12 col-sm-12">
 							<div class="services animate-box">
 								<img src="imgs/mortarboard.svg" alt="Reforço escolar'" class="benefits-icons hvr-grow">
-								<h3>REFORÇO ESCOLAR</h3>
+								<h3>ENEM E VESTIBULARES</h3>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-12 col-sm-12">
@@ -186,8 +179,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</div>
 						<div class="col-lg-3 col-md-12 col-sm-12">
 							<div class="services animate-box">
-								<img src="imgs/laptop.svg" alt="Programação'" class="benefits-icons hvr-grow">
-								<h3>PROGRAMAÇÃO</h3>
+								<img src="imgs/documentation.svg" alt="Programação'" class="benefits-icons hvr-grow">
+								<h3>REDAÇÃO</h3>
 							</div>
 						</div>
 					</div>
@@ -208,25 +201,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="col-md-3 col-sm-3">
 							<div class="services animate-box">
 								<!--<span><i class="icon-magnifying-glass"></i></span>-->
-								<img src="imgs/magnifying-glass.svg" alt="lupa" class="howto-icons">
-								<h3>Procure</h3>
-								<p>Encontre um professor para suas necessidades e orçamento, todos avaliados pela comunidade de alunos.</p>
+								<img src="imgs/laptop.svg" alt="lupa" class="howto-icons">
+								<h3>Preencha o formulário</h3>
+								<p>Você conta pra gente todas as suas necessidades para ter a melhor aula particular possível, como o que deseja aprender
+									e até quanto quer pagar.
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-3">
 							<div class="services animate-box">
 								<!--<span><i class="icon-calendar"></i></span>-->
-								<img src="imgs/calendar.svg" alt="calendário'" class="howto-icons">
-								<h3>Marque a aula</h3>
-								<p>Marque a aula no seu horário. Além disso, nós temos planos de assinaturas para aulas recorrentes.</p>
+								<img src="imgs/flask.svg" alt="calendário'" class="howto-icons">
+								<h3>Nós fazemos a mágica</h3>
+								<p>Nós recolhemos as suas informações e cruzamos com os dados dos melhores professores particulares dentro de suas necessidades.</p>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-3">
 							<div class="services animate-box">
-								<img src="imgs/glasses.svg" alt="óculos" class="howto-icons">
+								<img src="imgs/target.svg" alt="óculos" class="howto-icons">
 								<!--<span><i class="icon-map"></i></span>-->
-								<h3>Assista a aula</h3>
-								<p>O professor vai até você ou você vai até ele, tudo com a qualidade que só o ensino presencial pode trazer. </p>
+								<h3>Receba os melhores</h3>
+								<p>Voccê receba em seu e-mail os melhores professores particulares prontos para fazer você atingir todos os seus objetivos
+									com tranquilidade.
+								</p>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-3">
@@ -234,7 +230,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<img src="imgs/trophy.svg" alt="troféu'" class="howto-icons">
 								<!--<span><i class="icon-trophy"></i></span>-->
 								<h3>Atinja seus objetivos</h3>
-								<p>Passar na faculdade ou tocar um instrumento, não importa, nós temos certeza que atingirá seus objetivos.</p>
+								<p>Passar no ENEM, no vestibular, no concurso público ou tocar um instrumento, nunca foi tão fácil, nós temos certeza
+									que atingirá seus objetivos.</p>
 							</div>
 						</div>
 					</div>
@@ -244,11 +241,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<section id="fh5co-work-section" name="sobre">
 				<div class="container">
 					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+							<h3>Quem somos</h3>
+							<p>A ENSINAAÊ te ajuda a realizar seus objetivos</p>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
 						<div class="col-lg-8 animate-box">
-							<h3>A Ensinaaê te ajuda a realizar seus objetivos</h3>
-							<span style="display: block;"> <b>O UBER + DUOLINGO da educação</b>, mais fácil que pedir um UBER e tão divertido quanto o aprender no DUOLINGO.</span>
 							<span style="display: block;">
-						 Se você é um dos muitos brasileiros que almeja atingir seus objetivos - <b>concurso público, vestibulares, OAB</b>, ou até uma ajudinha naquela prova difícil -, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares espalhados por todo o Brasil e nas mais diversas especialidades, esperando por você. Eles irão dar todo apoio que falta para seu sucesso. Olha só como é simples: é só baixar o nosso aplicativo, falar sobre qual matéria quer aprender e pronto, você irá conhecer diversos professores bem pertinho de você! Aí é só combinar um local e realizar o investimento! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora e saia na frente em busca dos seus objetivos!
+						 Se você é um dos muitos brasileiros que almeja atingir seus objetivos - <b>concurso público, vestibulares, OAB</b>, ou até uma ajudinha naquela prova difícil -, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares espalhados por todo o Brasil e nas mais diversas especialidades, esperando para dar a melhor aula particular para você. Eles irão dar todo apoio que falta para seu sucesso. Olha só como é simples: é só preencher o nosso <a href="#inicio">formulário</a>, falar sobre suas necessidades, como o que deseja aprender, qual horário e data prefere a aula, qual o nível do profissional e o quanto quer pagar e pronto, você irá conhecer diversos professores bem pertinho de você! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora e saia na frente em busca dos seus objetivos! Passar no ENEM ou em concursos públicos nunca foi tão fácil!
 					</span>
 						</div>
 						<div class="col-lg-4 animate-box">
@@ -301,39 +304,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="col-md-4"></div>
 					</div>
 				</div>
-				<!--<div class="container">
-					<div class="row">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="row">
-								<div class="col-md-8">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Nome completo">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Assunto">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="E-mail">
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-top: 20px;">
-									<div class="form-group">
-										<textarea id="" placeholder="Fala com a gente..." class="form-control"></textarea>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-top: 20px;">
-									<div class="pull-right">
-										<button class="btn btn-secondary">Enviar</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>-->
 			</section>
 			<!-- fh5co-blog-section -->
 			<footer>
@@ -343,14 +313,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 							<div class="col-md-6 col-md-offset-3 text-center">
 								<p class="fh5co-social-icons">
-									<a href="http://twitter.com/_ensinaae" target="_blank"><i class="icon-twitter2"></i></a>
-									<a href="http://facebook.com/ensinaae" target="_blank"><i class="icon-facebook2"></i></a>
-									<a href="http://instagram.com/ensinaaeoficial" target="_blank"><i class="icon-instagram"></i></a>
+									<a href="http://twitter.com/_ensinaae" target="_blank"><i class="mdi mdi-twitter"></i></a>
+									<a href="http://facebook.com/ensinaae" target="_blank"><i class="mdi mdi-facebook"></i></a>
+									<a href="http://instagram.com/ensinaaeoficial" target="_blank"><i class="mdi mdi-instagram"></i></a>
 									<!--<a href="#"><i class="icon-dribbble2"></i></a>-->
 									<!--<a href="#"><i class="icon-youtube"></i></a>-->
-									<a href="http://medium.com/ensinaaê" target="_blank"><i class="icon-blog"></i></a>
+									<a href="http://medium.com/ensinaaê" target="_blank"><i class="mdi mdi-medium"></i></a>
 								</p>
-								<p>Copyright 2016 <a href="#">ensinaaê</a>. Todos os direitos reservados. <br>Feito com <i class="icon-heart3"></i>									em Bauru
+								<p>Copyright 2016 <a href="#">ensinaaê</a>. Todos os direitos reservados. <br>Feito com <i class="mdi mdi-heart"></i>									em Bauru
 								</p>
 
 							</div>
@@ -358,14 +328,106 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					</div>
 				</div>
 			</footer>
-
-
-
 		</div>
-		<!-- END fh5co-page -->
-
 	</div>
-	<!-- END fh5co-wrapper -->
+
+	<!-- Modal -->
+	<div class="modal fade schedule" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Solicitar orçamento de aula</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row">
+								<div class="col-lg-12 col-sm-12">
+									<div class="form-group">
+										<label for="name">Nome completo</label>
+										<input type="text" class="form-control" placeholder="Entre com o seu nome" id="name" name="name">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-7 col-sm-12">
+									<div class="form-group">
+										<label for="name">E-mail</label>
+										<input type="email" class="form-control" placeholder="Entre com o seu e-mail" id="email" name="email">
+									</div>
+								</div>
+								<div class="col-lg-5 col-sm-12">
+									<div class="form-group">
+										<label for="name">Até quanto quer pagar</label>
+										<select class="form-control" id="price" name="price">
+											<option value="-1">Selecione uma opção</option>
+											<option value="1">Até R$ 60,00</option>
+											<option value="2">De R$ 61,00 até R$ 80,00</option>
+											<option value="3">De R$ 81,00 até R$ 100,00</option>
+											<option value="3">De R$ 101,00 até R$ 120,00</option>											
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6 col-sm-12">
+									<div class="form-group">
+										<label for="name">Data da aula</label>
+										<input type="text" class="form-control" placeholder="Entre com apenas números" id="date" name="date">
+									</div>
+								</div>
+								<div class="col-lg-6 col-sm-12">
+									<div class="form-group">
+										<label for="name">Horário da aula</label>
+										<input type="text" class="form-control" placeholder="Entre com apenas números" id="hour" name="hour">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="name">O que quer aprender</label>
+										<select class="form-control" id="course" name="course">
+											<option value="-1">Selecione uma opção</option>
+											<option value="1">Atualidades</option>
+											<option value="2">Biologia</option>
+											<option value="3">Espanhol</option>
+											<option value="4">Física</option>
+											<option value="5">Geografia</option>
+											<option value="6">Gramática</option>
+											<option value="7">História</option>
+											<option value="8">Inglês</option>
+											<option value="9">Matemática</option>
+											<option value="10">Redação</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="name">Nível do professor</label>
+										<i style="margin-left: 5px;" class="mdi mdi-help-circle" rel="tooltip" data-toggle="tooltip" title="Básico: Matérias do nível fundamental
+										 Médio: Matérias do nível do ensino médio
+										Avançado: Matérias do nível do ensino superior"></i>
+										<select class="form-control" id="nivel" name="nivel">
+											<option value="-1">Selecione uma opção</option>
+											<option value="1">Básico</option>
+											<option value="2">Médio</option>
+											<option value="3">Avançado</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+					<button type="button" class="btn btn-secondary">Solicitar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--Firebase-->
 	<script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>

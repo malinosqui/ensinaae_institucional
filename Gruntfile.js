@@ -30,7 +30,7 @@ module.exports = function (grunt) {
                 files: {
                     'dist/js/main.min.js': ['js/modernizr-2.6.2.min.js', 'js/jquery.min.js', 'js/jquery.easing.js',
                         'js/velocity.min.js', 'js/bootstrap.min.js', 'js/jquery.waypoints.min.js', 'js/hoverIntent.js',
-                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/main.js',]
+                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/jquery-mask.js', 'js/main.js',]
                 }
             }
         },
@@ -40,7 +40,8 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css', 'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'css/style.css']
+                    'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css',
+                        'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'node_modules/mdi/css/materialdesignicons.css', 'css/style.css']
                 }
             }
         },
@@ -64,6 +65,25 @@ module.exports = function (grunt) {
                     'dist/index.html': 'index.html'     // 'destination': 'source'
                 }
             }
+        },
+        watch: {
+            css: {
+                files: ['css/*.css'],
+                tasks: ['cssmin'],
+                options: {
+                    livereload: true,
+                },
+            },
+            js: {
+                files: ['js/modernizr-2.6.2.min.js', 'js/jquery.min.js', 'js/jquery.easing.js',
+                    'js/velocity.min.js', 'js/bootstrap.min.js', 'js/jquery.waypoints.min.js', 'js/hoverIntent.js',
+                    'js/superfish.js', 'js/pnotify.custom.min.js', 'js/main.js'],
+                tasks: ['jshint', 'uglify'],
+            },
+            html: {
+                files: ['index.html', 'app/*/*.html'],
+                tasks: ['htmlmin']
+            }
         }
     });
 
@@ -79,7 +99,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin', 'imagemin']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin', 'watch']);
 
 
 };
