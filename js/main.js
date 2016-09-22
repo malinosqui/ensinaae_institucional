@@ -122,7 +122,7 @@
 						$("#course").val(value).trigger("change");
 						$("#btnContinue").prop("disabled", false);
 					}
-					else{
+					else {
 						$("#btnContinue").prop("disabled", true);
 					}
 				}
@@ -161,10 +161,38 @@
 	});
 
 	$('#btnBuy').click(function () {
-		$("#modalForm").css("display", "none");
-		$("#modalSuccess").css("display", "block");
-		$("#btnDismiss").html("OK");
-		$(this).css("display", "none");
+
+		var obj = {
+			name: $("#name").val(),
+			phone: $("#phone").val(),
+			usePhoneToContact: $("#phone-check").val(),
+			dateClass: $("#date").val(),
+			hourLesson: $("#hour").val(),
+			customerEmail: $("#email").val(),
+			price: $("#price").val(),
+			location: $("#location").val(),
+			level: $("#level").val(),
+			course: $("#course").val()
+		};
+
+		$.ajax({
+			url: "127.0.0.1:3000/postSimple",
+            cache: false,
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(obj),
+            success: function (data, textStatus, XMLHttpRequest) {
+				$("#modalForm").css("display", "none");
+				$("#modalSuccess").css("display", "block");
+				$("#btnDismiss").html("OK");
+				$(this).css("display", "none");
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                notification.show('error', errorThrown);
+            }
+        });
+
 	});
 
 } ());
