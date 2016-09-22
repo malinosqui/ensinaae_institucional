@@ -67,7 +67,7 @@
   #fh5co-header {
     position: relative;
     margin-bottom: 0;
-    z-index: 2;
+    z-index: 1;
   }
   
   .fh5co-cover, .fh5co-hero {
@@ -1591,28 +1591,30 @@
   .tooltip-inner {
     white-space: pre-wrap;
   }
-
+  
   .easy-autocomplete {
     display: inline-block;
   }
-
-.easy-autocomplete-container{
+  
+  .easy-autocomplete-container {
     position: absolute;
     background-color: #fff;
     width: 300px;
     margin-top: 5px;
-}
-
+    box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+    z-index: 3;
+  }
+  
   .easy-autocomplete-container>ul {
-        list-style: none;
+    list-style: none;
     margin: 0;
     padding: 0;
   }
-
-    .easy-autocomplete-container>ul>li.selected {
-        background-color: #e1e1e1;
+  
+  .easy-autocomplete-container>ul>li.selected {
+    background-color: #e1e1e1;
   }
-
+  
   .eac-item {
     color: #364F6B;
   }

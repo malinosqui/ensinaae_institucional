@@ -93,12 +93,6 @@
 		// 	validate();
 		// });
 
-		$('#btnContinue').bind('click', function () {
-
-			// $('#_course').val();
-
-		});
-
 		$('#date').mask('00/00/0000');
 		$('#hour').mask('00:00');
 		$('#location').mask('00000-000');
@@ -113,12 +107,30 @@
 				$("#phone-div").css("display", "none");
 		});
 
+		var courses = ["Atualidades", "Biologia", "Espanhol", "Física", "Geografia", "Gramática", "História", "Inglês", "Matemática", "Redação"];
+
+
 		var options = {
-			data: ["Atualidades", "Biologia", "Espanhol", "Física", "Geografia", "Gramática", "História", "Inglês", "Matemática", "Redação"]
+			data: courses,
+			list: {
+				match: {
+					enabled: true
+				},
+				onSelectItemEvent: function () {
+					var value = $("#_course").getSelectedItemData();
+					if (value) {
+						$("#course").val(value).trigger("change");
+						$("#btnContinue").prop("disabled", false);
+					}
+					else{
+						$("#btnContinue").prop("disabled", true);
+					}
+				}
+			}
 		};
 
 		$("#_course").easyAutocomplete(options);
-		
+
 	});
 
 	$('a[href*="#"]:not([href="#"])').click(function () {
@@ -146,6 +158,13 @@
 			// $('#fh5co-logo').addClass('animated bounceOut');
 
 		}
+	});
+
+	$('#btnBuy').click(function () {
+		$("#modalForm").css("display", "none");
+		$("#modalSuccess").css("display", "block");
+		$("#btnDismiss").html("OK");
+		$(this).css("display", "none");
 	});
 
 } ());
