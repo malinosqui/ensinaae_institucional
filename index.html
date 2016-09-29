@@ -95,19 +95,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 	<div id="fh5co-wrapper">
+		<div class="warning">
+			<div class="row">
+				<div class="col-lg-9 warning-message">
+					<h2>Garanta-se no <b>ENEM 2016</b>, os melhores professores particulares estão aqui na ENSINAAÊ.</h2>
+				</div>
+				<div class="col-lg-3 text-right">
+					<button class="warning-button" data-toggle="modal" data-target="#myModal">QUERO PASSAR</button>
+				</div>
+			</div>
+		</div>
 		<div id="fh5co-page">
 
 			<div class="fh5co-hero" name="inicio">
 				<div class="fh5co-overlay"></div>
-				<div class="fh5co-cover text-center" style="background-image: url(imgs/learn_final.png);">
+				<div class="fh5co-cover text-center" style="background-image: url(imgs/bg-min.jpeg);">
 					<div class="desc animate-box">
 						<div class="logo"></div>
 						<h1>Encontre um professor particular pertinho de você</h1>
-						<div class="row">
+						<div class="row visible-sm visible-xs visible-md">
 							<div class="col-lg-12">
 								<input type="text" placeholder="O que quer aprender" class="hero-input" id="_course">
 								<button class="btn btn-secondary" type="button" id="btnContinue" data-toggle="modal" data-target="#myModal" disabled>Continuar</button>
 							</div>
+						</div>
+						<div class="row visible-lg">
+							<div class="col-lg-6 col-lg-offset-3">
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Atualidades">
+									<div class="card" onclick="setCourse('Atualidades')"><img src="imgs/atualidades.svg" alt="atualidades">
+									</div>
+								</div>
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Biologia">
+									<div class="card" onclick="setCourse('Biologia')"><img src="imgs/biologia.svg" alt="biologia">
+									</div>
+								</div>
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Inglês">
+									<div class="card" onclick="setCourse('Inglês')"><img src="imgs/ingles.svg" alt="ingles">
+									</div>
+								</div>
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Física">
+									<div class="card" onclick="setCourse('Física')"><img src="imgs/fisica.svg" alt="física'">
+									</div>
+								</div>
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Geografia">
+									<div class="card" onclick="setCourse('Geografia')"><img src="imgs/geografia.svg" alt="geografia">
+									</div>
+								</div>
+								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Matemática">
+									<div class="card" onclick="setCourse('Matemática')"><img src="imgs/matematica.svg" alt="matemática">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row visible-lg" style="margin-top: 35px;">
+							<!--<h4 class="courses">mais matérias</h4>-->
+							<button class="btn btn-secondary" type="button" id="btnAllCourses" data-toggle="modal" data-target="#myModal">Mais matérias</button>
+
 						</div>
 					</div>
 				</div>
@@ -123,9 +166,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</h1>
 							<nav id="fh5co-menu-wrap" role="navigation">
 								<ul class="sf-menu" id="fh5co-primary-menu">
-									<li class="active">
-										<a href="#inicio">INÍCIO</a>
-									</li>
 									<li>
 										<a href="#beneficios" class="fh5co-sub-ddown">BENEFÍCIOS</a>
 									</li>
@@ -133,10 +173,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										<a href="#comofunciona" class="fh5co-sub-ddown">COMO FUNCIONA</a>
 									</li>
 									<li>
-										<a href="#sobre" class="fh5co-sub-ddown">SOBRE</a>
+										<a href="#sobre" class="fh5co-sub-ddown">QUEM SOMOS</a>
 									</li>
 									<li>
 										<a href="#equipe" class="fh5co-sub-ddown">EQUIPE</a>
+									</li>
+									<li id="startMenu" style="display: none;">
+										<div>
+											<a href="#inicio" class="fh5co-sub-ddown" id="start">
+												<span>COMEÇAR</span>
+											</a>
+										</div>
 									</li>
 								</ul>
 							</nav>
@@ -229,7 +276,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<img src="imgs/trophy.svg" alt="troféu'" class="howto-icons">
 								<!--<span><i class="icon-trophy"></i></span>-->
 								<h3>Atinja seus objetivos</h3>
-								<p>Passar no ENEM, no vestibular, no concurso público ou tocar um instrumento, nunca foi tão fácil, nós temos certeza
+								<p>Passar no ENEM, no vestibular, no concurso público ou tocar um instrumento nunca foi tão fácil, nós temos certeza
 									que atingirá seus objetivos.</p>
 							</div>
 						</div>
@@ -250,16 +297,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="row">
 						<div class="col-lg-8 animate-box">
 							Se você é um dos muitos brasileiros que almeja atingir seus objetivos - <b>concurso público, vestibulares, OAB</b>,
-							ou até uma ajudinha naquela prova difícil -, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares
+							ou até uma ajudinha naquela prova difícil, nós iremos te ajudar! Na ENSINAAÊ existem diversos professores particulares
 							espalhados por todo o Brasil e nas mais diversas especialidades, esperando para dar a melhor aula particular para
 							você. Eles irão dar todo apoio que falta para seu sucesso. Tudo isso de maneira muito simples: é só preencher o nosso
-							<a href="#inicio">formulário</a>, falar sobre suas necessidades como o que deseja aprender, qual horário e data prefere
-							a aula, qual o nível do profissional e o quanto quer pagar. Pronto você irá conhecer diversos professores bem pertinho
-							de você! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora e saia na frente em busca
-							dos seus objetivos! Passar no ENEM ou em concursos públicos nunca foi tão fácil!
+							<a href="#inicio">formulário</a>, falar sobre suas necessidades como o que deseja aprender, qual horário e em quais
+							dias da semana prefere a aula, qual o nível do profissional e o quanto quer pagar. Pronto você irá conhecer diversos
+							professores bem pertinho de você! Tudo de maneira simples, prática e segura! Tá esperando o quê? Cadastre-se agora
+							e saia na frente em busca dos seus objetivos! <b>Passar no ENEM</b> ou em concursos públicos nunca foi tão fácil!
 						</div>
 						<div class="col-lg-4 animate-box">
-							<img src="imgs/iphone.png" alt="Imagem do aplicativo da ensinaê em um celular" style="width: 350px;">
+							<img src="imgs/hero.png" alt="Imagem do aplicativo da ensinaê em um celular" style="width: 350px; margin-top: -130px;">
 						</div>
 					</div>
 				</div>
@@ -281,6 +328,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</section>
 
+			<!--<section id="fh5co-blog-section" name="blog">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+							<h3>Confira o o nosso conteúdo</h3>
+							<p>Algumas dicas para você atingir seus objetivos.</p>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row text-center">
+					</div>
+				</div>
+			</section>-->
+
 			<!-- fh5co-services-section -->
 			<section id="fh5co-contact-section" name="equipe">
 				<div class="container">
@@ -295,15 +357,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div class="row profile">
 						<div class="col-md-4 text-center">
 							<img src="imgs/felipegimenes.jpg" alt="Felipe Gimenes" class="profile-img">
-							<p><a href="https://www.facebook.com/felipegimenes">Felipe Gimenes</a></p>
+							<p><a href="https://www.linkedin.com/in/felipe-almeida-gimenes-6462b36a">Felipe Gimenes</a></p>
 						</div>
 						<div class="col-md-4 text-center">
 							<img src="imgs/gabrielmalinosqui.jpg" alt="Gabriel Malinosqui" class="profile-img">
-							<p><a href="https://facebook.com/gabrielmalinosqui">Gabriel Malinosqui</a></p>
+							<p><a href="https://br.linkedin.com/in/gabriel-malinosqui-011ab56b">Gabriel Malinosqui</a></p>
 						</div>
 						<div class="col-md-4 text-center">
 							<img src="imgs/wellingtonsantana.jpg" alt="Wellington Santana" class="profile-img">
-							<p><a href="https://www.facebook.com/wellington.c.santana">Wellington Santana</a></p>
+							<p><a href="https://www.linkedin.com/in/wellington-cristi-vilela-santana-a48b1123">Wellington Santana</a></p>
 						</div>
 						<div class="col-md-4"></div>
 					</div>
@@ -374,10 +436,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-12 col-sm-12">
+									<div class="col-lg-6 col-sm-12">
 										<div class="form-group">
-											<label for="name">E-mail*</label>
+											<label for="email">E-mail*</label>
 											<input type="email" class="form-control" placeholder="Entre com o seu e-mail" id="email" name="email" required>
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-12">
+										<div class="form-group">
+											<label for="frequency">Frequência da aula</label>
+											<select class="form-control" id="frequency" name="frequency">
+											<option value="-1">Selecione uma opção</option>
+											<option value="1">Uma única vez</option>
+											<option value="2">Mais de uma vez por semana</option>
+											<option value="3">Uma vez por semana</option>
+											<option value="3">Uma vez por mês</option>	
 										</div>
 									</div>
 								</div>
@@ -385,7 +458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<div class="col-lg-6 col-sm-12">
 										<div class="form-group">
 											<label for="name">Matéria*</label>
-											<input type="text" class="form-control" name="course" id="course" disabled required>
+											<input type="text" class="form-control" name="course" id="course" required>
 										</div>
 									</div>
 									<div class="col-lg-6 col-sm-12">
@@ -445,7 +518,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" id="btnDismiss" data-dismiss="modal">cancelar</button>
-					<button type="button" class="btn btn-secondary" id="btnBuy">solicitar</button>
+					<button type="button" class="btn btn-secondary" id="btnBuy">solicitar <img src="imgs/loading.gif" style="display: none; width: 15px;"></button>
 				</div>
 			</div>
 		</div>
