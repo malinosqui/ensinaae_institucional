@@ -229,14 +229,28 @@
   
   .sf-menu a {
     color: #364F6B;
-    padding: 0.75em 1em !important;
+    padding: 1em 1em !important;
     font-weight: normal;
     border-left: none;
     border-top: none;
     border-top: none;
     text-decoration: none;
     zoom: 1;
-    font-size: 18px;
+    font-size: 0.8em;
+    border-bottom: none !important;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sf-menu2 a {
+    color: #fff;
+    padding: 1em 1em !important;
+    font-weight: normal;
+    border-left: none;
+    border-top: none;
+    border-top: none;
+    text-decoration: none;
+    zoom: 1;
+    font-size: 0.8em;
     border-bottom: none !important;
     transition: all 0.2s ease-in-out;
   }
@@ -321,6 +335,20 @@
     /*position: fixed;*/
     /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);*/
     transition: all 0.2s ease-in-out;
+  }
+  
+  #fh5co-header2-section {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #364F6B;
+    height: 80px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
   }
   
   #fh5co-header-section.header-fixed {
@@ -1413,7 +1441,7 @@
   
   label {
     font-weight: 300;
-    font-family: "Source Sans Pro", Arial, sans-serif;
+    /*font-family: "Source Sans Pro", Arial, sans-serif;*/
   }
   
   .form-control:focus {
@@ -1498,8 +1526,7 @@
   .hero-input:invalid {
     background-color: #364F6B;
   }
-  
-  #email-error {
+  /*#email-error {
     position: absolute;
     background-color: #364F6B;
     color: #fff;
@@ -1517,7 +1544,7 @@
   
   #email-error.show {
     display: block;
-  }
+  }*/
   
   @media screen and (max-width: 768px) {
     .hero-input {
@@ -1573,6 +1600,15 @@
   div.card {
     background-color: #fff;
     width: 100%;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  div.card:hover {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
   }
   
   .services > p {
@@ -1594,6 +1630,11 @@
   
   .easy-autocomplete {
     display: inline-block;
+  }
+  
+  .form-group > .easy-autocomplete {
+    display: block;
+    width: auto !important;
   }
   
   .easy-autocomplete-container {
@@ -1618,4 +1659,74 @@
   .eac-item {
     color: #364F6B;
   }
-  /*# sourceMappingURL=style.css.map */
+  
+  .error {
+    font-size: 0.8em;
+    color: #FC5185;
+  }
+  
+  .warning {
+    padding: 20px;
+    position: absolute;
+    z-index: 3;
+    background-color: #3FC1C9;
+    width: 100%;
+    color: #fff;
+    border-bottom: 5px solid #0199A0;
+    line-height: 2.2;
+  }
+  
+  .warning-message>h2 {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0;
+    line-height: 2.1em;
+  }
+  
+  .warning-button {
+    color: #fff;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid;
+    padding: 7px;
+  }
+  
+  .warning-button:hover {
+    background-color: #0199A0;
+  }
+  
+  #start > span {
+    background-color: #FC5185;
+    padding: 10px;
+    border-radius: 22px;
+    color: #fff;
+  }
+  
+  div.card>h2 {
+    font-size: 0.6em;
+    margin-top: 10px;
+  }
+  
+  .courses {
+    color: #fff;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  /*.fh5co-sub-ddown {
+    color: #fff !important;
+  }*/
+  /*.warning-button:hover {
+    background: #0AF;
+  }
+  
+  .warning-button.three-d {
+    position: relative;
+    box-shadow: 1px 1px #53A7EA, 2px 2px #53A7EA, 3px 3px #53A7EA;
+    transition: all 0.1s ease-in;
+  }
+  
+  .warning-button.three-d:active {
+    box-shadow: none;
+    top: 3px;
+    left: 3px;
+  }*/

@@ -72,6 +72,20 @@
 	// Document on load.
 	$(function () {
 
+		$('#date').datepicker({
+			format: "mm/dd/yyyy",
+			language: 'pt-BR'
+		});
+
+		jQuery.extend(jQuery.validator.messages, {
+			required: "Campo obrigatório.",
+			email: "E-mail inválido",
+			date: "Data inválida.",
+			number: "Número inválido.",
+			maxlength: jQuery.validator.format("É somente no máximo {0} caracteres."),
+			minlength: jQuery.validator.format("É permitido no mínimo {0} caracteres.")
+		});
+
 		PNotify.prototype.options.styling = "bootstrap3";
 
 		// configurando firebase
@@ -119,8 +133,10 @@
 				onSelectItemEvent: function () {
 					var value = $("#_course").getSelectedItemData();
 					if (value) {
+						console.log(value);
 						$("#course").val(value).trigger("change");
 						$("#btnContinue").prop("disabled", false);
+						$("#_course").val(value);
 					}
 					else {
 						$("#btnContinue").prop("disabled", true);
@@ -129,7 +145,17 @@
 			}
 		};
 
+		var optionsModal = {
+			data: courses,
+			list: {
+				match: {
+					enabled: true
+				}
+			}
+		};
+
 		$("#_course").easyAutocomplete(options);
+		$("#course").easyAutocomplete(optionsModal);
 
 	});
 
@@ -151,10 +177,12 @@
 			$('#fh5co-header-section').addClass('header-fixed');
 			$('#fh5co-logo').addClass('header-fixed');
 			$('#fh5co-logo').addClass('animated bounceIn');
-
+			$('#startMenu').css('display', 'block');
+			$('.warning').css('display', 'none');
 		} else {
 			$('#fh5co-header-section').removeClass('header-fixed');
 			$('#fh5co-logo').removeClass('header-fixed');
+			$('#startMenu').css('display', 'none');
 			// $('#fh5co-logo').addClass('animated bounceOut');
 
 		}
@@ -162,23 +190,36 @@
 
 	$('#btnBuy').click(function () {
 
+		//verifica formulário'
+		if (!$("#formModal").valid())
+			return;
+
+
+		$("#btnBuy>img").css("display", "inline-block");
+		$("#btnBuy").prop("disabled", "true");
+
+
 		var obj = {
 			name: $("#name").val(),
 			phone: $("#phone").val(),
-			usePhoneToContact: $("#phone-check").val(),
+			usePhoneToContact: $("#phone-check").prop("checked"),
 			dateClass: $("#date").val(),
 			hourLesson: $("#hour").val(),
 			customerEmail: $("#email").val(),
-			price: $("#price").val(),
+			price: $("#price option:selected").text(),
 			location: $("#location").val(),
-			level: $("#level").val(),
-			course: $("#course").val()
+			level: $("#level option:selected").text(),
+			course: $("#course").val(),
+			frequency: $('#frequency option:selected').text()
 		};
 
+		var btn = this;
+
 		$.ajax({
-			url: "127.0.0.1:3000/postSimple",
+			url: "http://ensinaae-mail.azurewebsites.net/sendSimple",
             cache: false,
             type: "POST",
+			method: "POST",
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(obj),
@@ -186,14 +227,20 @@
 				$("#modalForm").css("display", "none");
 				$("#modalSuccess").css("display", "block");
 				$("#btnDismiss").html("OK");
-				$(this).css("display", "none");
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                notification.show('error', errorThrown);
-            }
-        });
+				$(btn).css("display", "none");
+				$("#btnBuy>img").css("display", "none");
 
+            },
+			error: function (err, status) {
+				console.log(err, status);
+			}
+        });
 	});
 
 } ());
+
+function setCourse(course) {
+	$('#course').val(course);
+	$('#myModal').modal('show');
+}
 

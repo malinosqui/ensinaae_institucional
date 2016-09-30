@@ -30,8 +30,9 @@ module.exports = function (grunt) {
                 files: {
                     'dist/js/main.min.js': ['js/modernizr-2.6.2.min.js', 'js/jquery.min.js', 'js/jquery.easing.js',
                         'js/velocity.min.js', 'js/bootstrap.min.js', 'js/jquery.waypoints.min.js', 'js/hoverIntent.js',
-                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/jquery-mask.js', 'node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js',
-                        'js/main.js',]
+                        'js/superfish.js', 'js/pnotify.custom.min.js', 'js/jquery-mask.js', 'node_modules/jquery-validation/dist/jquery.validate.js',
+                        'node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.js', 'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+                        'node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js', 'js/main.js']
                 }
             }
         },
@@ -43,8 +44,8 @@ module.exports = function (grunt) {
                 files: {
                     'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css',
                         'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'node_modules/mdi/css/materialdesignicons.css',
-                         'css/style.css']
-                         
+                        'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', 'css/style.css']
+
                 }
             }
         },
@@ -64,8 +65,9 @@ module.exports = function (grunt) {
                     removeComments: true,
                     collapseWhitespace: true
                 },
-                files: {                                   // Dictionary of files
-                    'dist/index.html': 'index.html'     // 'destination': 'source'
+                files: {                                 
+                    'dist/index.html': 'index.html',
+                    'dist/aula-particular.html': 'aula-particular.html'     
                 }
             }
         },
@@ -84,7 +86,7 @@ module.exports = function (grunt) {
                 tasks: ['jshint', 'uglify'],
             },
             html: {
-                files: ['index.html', 'app/*/*.html'],
+                files: ['index.html', 'aula-particular.html'],
                 tasks: ['htmlmin']
             }
         }
