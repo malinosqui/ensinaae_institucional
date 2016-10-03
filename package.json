@@ -17,6 +17,7 @@
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-responsive-images": "^0.1.9",
     "jshint-stylish": "latest"
   },
   "dependencies": {

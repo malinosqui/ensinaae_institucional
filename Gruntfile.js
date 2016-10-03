@@ -65,10 +65,29 @@ module.exports = function (grunt) {
                     removeComments: true,
                     collapseWhitespace: true
                 },
-                files: {                                 
+                files: {
                     'dist/index.html': 'index.html',
-                    'dist/aula-particular.html': 'aula-particular.html'     
+                    'dist/aula-particular.html': 'aula-particular.html'
                 }
+            }
+        },
+        responsive_images: {
+            dev: {
+                options: {
+                    sizes: [
+                        {
+                            width: 400
+                        },
+                        {
+                            width: 800
+                        }],
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist/imgs',                   // Src matches are relative to this path
+                    src: ['**/*.{png,jpg}'],   // Actual patterns to match
+                    dest: 'dist/imgs/'
+                }]
             }
         },
         watch: {
@@ -103,6 +122,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-responsive-images');
 
     grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin', 'watch']);
 
