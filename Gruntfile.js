@@ -36,19 +36,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        cssmin: {
-            options: {
-                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
-            },
-            build: {
-                files: {
-                    'dist/css/style.min.css': ['css/animate.css', 'css/hover-min.css', 'css/icomoon.css',
-                        'css/bootstrap.css', 'css/superfish.css', 'css/pnotify.custom.min.css', 'node_modules/mdi/css/materialdesignicons.css',
-                        'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', 'css/style.css']
-
-                }
-            }
-        },
         imagemin: {
             dynamic: {                         // Another target
                 files: [{
@@ -59,15 +46,20 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        processhtml: {
+            dist: {
+                files: {
+                    'dist/index.html': ['index.html'],
+                }
+            }
+        },
         htmlmin: {                                     // Task
             dist: {                                      // Target
                 options: {                                 // Target options
-                    removeComments: true,
                     collapseWhitespace: true
                 },
                 files: {
-                    'dist/index.html': 'index.html',
-                    'dist/aula-particular.html': 'aula-particular.html'
+                    'dist/index.html': 'index.html'
                 }
             }
         },
@@ -88,6 +80,47 @@ module.exports = function (grunt) {
                     src: ['**/*.{png,jpg}'],   // Actual patterns to match
                     dest: 'dist/imgs/'
                 }]
+            }
+        },
+        uncss: {
+            dist: {
+                options: {
+                    ignore: [
+                        // bootstrap
+                        /\.fade/,
+                        /\.modal/,
+                        '.affix',
+                        /\.tooltip/,
+                        /\.popover/,
+                        /\.collaps/,
+                        /\.carousel-inner/,
+                        /\.open/,
+                        /\.in/,
+                        '.visible-lg',
+                        '.visible-md',
+                        '.visible-sm',
+                        '.visible-xs',
+                        // Easy autocomplete
+                        '.easy-autocomplete',
+                        '.easy-autocomplete-container',
+                        '.easy-autocomplete-container>ul',
+                        '.easy-autocomplete-container>ul>li.selected',
+                        '.eac-item'
+                    ]
+                },
+                files: {
+                    'dist/css/style.min.css': ['index.html']
+                }
+            }
+        },
+        cssmin: {
+            options: {
+                banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+            },
+            build: {
+                files: {
+                    'dist/css/style.min.css': ['dist/css/style.min.css']
+                }
             }
         },
         watch: {
@@ -123,8 +156,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-uncss');
+    grunt.loadNpmTasks('grunt-processhtml');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'htmlmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'processhtml', 'uncss', 'cssmin', 'watch']);
 
 
 };

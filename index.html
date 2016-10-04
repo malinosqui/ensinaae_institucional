@@ -54,7 +54,17 @@
 	<!--<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>-->
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" media="none">
 	<!--<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet" media="none">-->
+
+	<!-- build:css css/style.min.css -->
 	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/hover-min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/superfish.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- /build -->
+	
 	<link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
 
 	<!-- Hotjar Tracking Code for http://ensinaae.com.br -->
@@ -126,27 +136,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="row visible-lg">
 							<div class="col-lg-6 col-lg-offset-3">
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Atualidades">
-									<div class="card" onclick="setCourse('Atualidades')"><img src="imgs/atualidades.svg" alt="atualidades">
+									<div class="card course" name="atualidades"><img src="imgs/atualidades.svg" alt="atualidades">
 									</div>
 								</div>
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Biologia">
-									<div class="card" onclick="setCourse('Biologia')"><img src="imgs/biologia.svg" alt="biologia">
+									<div class="card course" name="biologia"><img src="imgs/biologia.svg" alt="biologia">
 									</div>
 								</div>
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Inglês">
-									<div class="card" onclick="setCourse('Inglês')"><img src="imgs/ingles.svg" alt="ingles">
+									<div class="card course" name="inglês"><img src="imgs/ingles.svg" alt="ingles">
 									</div>
 								</div>
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Física">
-									<div class="card" onclick="setCourse('Física')"><img src="imgs/fisica.svg" alt="física'">
+									<div class="card course" name="física"><img src="imgs/fisica.svg" alt="física'">
 									</div>
 								</div>
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Geografia">
-									<div class="card" onclick="setCourse('Geografia')"><img src="imgs/geografia.svg" alt="geografia">
+									<div class="card course" name="geografia"><img src="imgs/geografia.svg" alt="geografia">
 									</div>
 								</div>
 								<div class="col-lg-2" rel="tooltip" data-toggle="tooltip" title="Matemática">
-									<div class="card" onclick="setCourse('Matemática')"><img src="imgs/matematica.svg" alt="matemática">
+									<div class="card course" name="matemática"><img src="imgs/matematica.svg" alt="matemática">
 									</div>
 								</div>
 							</div>
@@ -529,8 +539,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</div>
 
-	<div id="cd-nav">
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+	<div id="cd-nav" class="visible-sm visible-xs visible-md">
+		<a href="javascript:;" class="cd-nav-trigger">Menu<span></span></a>
 
 		<nav id="cd-main-nav">
 			<ul>

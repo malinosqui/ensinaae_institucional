@@ -45,28 +45,6 @@
 		}, { offset: '85%' });
 	};
 
-	function validateEmail(email) {
-		var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-		return re.test(email);
-	}
-
-	function validate() {
-		var field = $('#email');
-
-		if (!validateEmail(field[0].value)) {
-
-			new PNotify({
-				title: 'E-mail inválido',
-				type: 'error',
-				text: 'Preencha o e-mail correntamente e tente de novo!'
-			});
-
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
 
 
 	// Document on load.
@@ -83,22 +61,19 @@
 			date: "Data inválida.",
 			number: "Número inválido.",
 			maxlength: jQuery.validator.format("É somente no máximo {0} caracteres."),
-			minlength: jQuery.validator.format("É permitido no mínimo {0} caracteres.")
+			minlength: jQuery.
+				validator.format("É permitido no mínimo {0} caracteres.")
 		});
 
-		PNotify.prototype.options.styling = "bootstrap3";
+		$('.course.card').click(function () {
+			setCourse($(this).attr('name'));
+		});
 
-		// configurando firebase
-		var config = {
-			apiKey: "AIzaSyB-SJCUV-h63gIsJmCmRGs46s2DptuWBu8",
-			authDomain: "ensinaae-9ae64.firebaseapp.com",
-			databaseURL: "https://ensinaae-9ae64.firebaseio.com",
-			storageBucket: "ensinaae-9ae64.appspot.com",
-		};
-		firebase.initializeApp(config);
-
-		var database = firebase.database();
-
+		// setCourse();
+		function setCourse(course) {
+			$('#course').val(course);
+			$('#myModal').modal('show');
+		}
 
 		mainMenu();
 		contentWayPoint();
@@ -238,45 +213,17 @@
 	});
 
 
-	var offset = 300;
-
 	var navigationContainer = $('#cd-nav'),
 		mainNavigation = navigationContainer.find('#cd-main-nav ul');
 
 	//open or close the menu clicking on the bottom "menu" link
 	$('.cd-nav-trigger').on('click', function () {
+		console.log('yahoo');
+		console.log($(this));
 		$(this).toggleClass('menu-is-open');
 		//we need to remove the transitionEnd event handler (we add it when scolling up with the menu open)
 		mainNavigation.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend').toggleClass('is-visible');
 
 	});
-
-	// function checkMenu() {
-	// 	if ($(window).scrollTop() > offset && !navigationContainer.hasClass('is-fixed')) {
-	// 		navigationContainer.addClass('is-fixed').find('.cd-nav-trigger').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
-	// 			mainNavigation.addClass('has-transitions');
-	// 		});
-	// 	} else if ($(window).scrollTop() <= offset) {
-	// 		//check if the menu is open when scrolling up
-	// 		if (mainNavigation.hasClass('is-visible') && !$('html').hasClass('no-csstransitions')) {
-	// 			//close the menu with animation
-	// 			mainNavigation.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-	// 				//wait for the menu to be closed and do the rest
-	// 				mainNavigation.removeClass('is-visible is-hidden has-transitions');
-	// 				navigationContainer.removeClass('is-fixed');
-	// 				$('.cd-nav-trigger').removeClass('menu-is-open');
-	// 			});
-	// 			//check if the menu is open when scrolling up - fallback if transitions are not supported
-	// 		} else if (mainNavigation.hasClass('is-visible') && $('html').hasClass('no-csstransitions')) {
-	// 			mainNavigation.removeClass('is-visible has-transitions');
-	// 			navigationContainer.removeClass('is-fixed');
-	// 			$('.cd-nav-trigger').removeClass('menu-is-open');
-	// 			//scrolling up with menu closed
-	// 		} else {
-	// 			navigationContainer.removeClass('is-fixed');
-	// 			mainNavigation.removeClass('has-transitions');
-	// 		}
-	// 	}
-	// }
 
 } ());
