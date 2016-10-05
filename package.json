@@ -19,7 +19,6 @@
     "grunt-contrib-watch": "latest",
     "grunt-processhtml": "^0.4.1",
     "grunt-responsive-images": "^0.1.9",
-    "grunt-ucss": "^0.1.4",
     "grunt-uncss": "^0.6.1",
     "jshint-stylish": "latest"
   },
