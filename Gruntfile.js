@@ -119,7 +119,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'dist/css/style.min.css': ['dist/css/style.min.css']
+                    'dist/css/style.min.css': ['dist/css/style.min.css', 'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css']
                 }
             }
         },
