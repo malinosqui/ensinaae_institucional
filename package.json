@@ -17,6 +17,7 @@
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-ftp-deploy": "^0.1.10",
     "grunt-processhtml": "^0.4.1",
     "grunt-responsive-images": "^0.1.9",
     "grunt-uncss": "^0.6.1",

@@ -141,14 +141,20 @@ module.exports = function (grunt) {
                 files: ['index.html', 'aula-particular.html'],
                 tasks: ['htmlmin']
             }
+        },
+        'ftp-deploy': {
+            build: {
+                auth: {
+                    host: 'waws-prod-cq1-003.ftp.azurewebsites.windows.net',
+                    port: 21,
+                    authKey: 'key1'
+                },
+                src: 'dist/',
+                dest: '/site/wwwroot/'
+            }
         }
     });
-
-    // ===========================================================================
-    // LOAD GRUNT PLUGINS ========================================================
-    // ===========================================================================
-    // we can only load these if they are in our package.json
-    // make sure you have run npm install so our app can find these
+    
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -158,8 +164,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-ftp-deploy');
 
     grunt.registerTask('default', ['jshint', 'uglify', 'processhtml', 'uncss', 'cssmin', 'watch']);
+    grunt.registerTask('deploy', ['ftp-deploy']);
 
 
 };
