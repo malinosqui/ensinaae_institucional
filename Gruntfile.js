@@ -126,7 +126,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ['css/*.css'],
-                tasks: ['cssmin'],
+                tasks: ['uncss','cssmin'],
                 options: {
                     livereload: true,
                 },
@@ -139,7 +139,7 @@ module.exports = function (grunt) {
             },
             html: {
                 files: ['index.html', 'aula-particular.html'],
-                tasks: ['htmlmin']
+                tasks: ['processhtml', 'htmlmin']
             }
         },
         'ftp-deploy': {
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
             }
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-ftp-deploy');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'processhtml', 'uncss', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'htmlmin', 'uncss', 'cssmin', 'watch']);
     grunt.registerTask('deploy', ['ftp-deploy']);
 
 
