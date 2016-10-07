@@ -106,7 +106,8 @@ module.exports = function (grunt) {
                         '.easy-autocomplete-container>ul',
                         '.easy-autocomplete-container>ul>li.selected',
                         '.eac-item'
-                    ]
+                    ],
+                    ignoreSheets: ['css/style.min.css']
                 },
                 files: {
                     'dist/css/style.min.css': ['index.html']
@@ -126,7 +127,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ['css/*.css'],
-                tasks: ['uncss','cssmin'],
+                tasks: ['uncss', 'cssmin'],
                 options: {
                     livereload: true,
                 },

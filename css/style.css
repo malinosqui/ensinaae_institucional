@@ -1240,13 +1240,19 @@
       -moz-animation: cd-bounce-in 0.3s linear;
       animation: cd-bounce-in 0.3s linear;
     }
-    ul.courses-footer {
-      list-style: none;
-      font-size: 0.9em;
-      color: rgba(255, 255, 255, .5);
-    }
-    ul.courses-footer > li {
-      display: inline;
-      padding: 10px;
-    }
+  }
+  
+  ul.courses-footer {
+    list-style: none;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, .5);
+  }
+  
+  ul.courses-footer > li {
+    display: inline;
+    padding: 10px;
+  }
+  
+  .link-footer {
+    color: rgba(255, 255, 255, .5);
   }
