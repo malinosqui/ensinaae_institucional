@@ -50,10 +50,10 @@
 	// Document on load.
 	$(function () {
 
-		$('#date').datepicker({
-			format: "mm/dd/yyyy",
-			language: 'pt-BR'
-		});
+		// $('#date').datepicker({
+		// 	format: "mm/dd/yyyy",
+		// 	language: 'pt-BR'
+		// });
 
 		jQuery.extend(jQuery.validator.messages, {
 			required: "Campo obrigatório.",
@@ -82,7 +82,7 @@
 		// 	validate();
 		// });
 
-		$('#date').mask('00/00/0000');
+		// $('#date').mask('00/00/0000');
 		$('#hour').mask('00:00');
 		$('#location').mask('00000-000');
 		$('#phone').mask("(00) 00000-0000");

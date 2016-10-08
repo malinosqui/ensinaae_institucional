@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "~0.4.4",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-cssmin": "latest",
     "grunt-contrib-htmlmin": "^2.0.0",
     "grunt-contrib-imagemin": "^1.0.1",

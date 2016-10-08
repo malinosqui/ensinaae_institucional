@@ -107,7 +107,7 @@ module.exports = function (grunt) {
                         '.easy-autocomplete-container>ul>li.selected',
                         '.eac-item'
                     ],
-                    ignoreSheets: ['css/style.min.css']
+                    ignoreSheets: ['css/style.min.css', 'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css']
                 },
                 files: {
                     'dist/css/style.min.css': ['index.html']
@@ -143,6 +143,17 @@ module.exports = function (grunt) {
                 tasks: ['processhtml', 'htmlmin']
             }
         },
+        browserSync: {
+            bsFiles: {
+                src: '**/*.*'
+            },
+            options: {
+                server: {
+                    baseDir: "dist/"
+                },
+                watchTask: true
+            }
+        },
         'ftp-deploy': {
             build: {
                 auth: {
@@ -166,8 +177,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-ftp-deploy');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
-    grunt.registerTask('default', ['jshint', 'uglify', 'htmlmin', 'uncss', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'htmlmin', 'uncss', 'cssmin', 'browserSync', 'watch']);
     grunt.registerTask('deploy', ['ftp-deploy']);
 
 
