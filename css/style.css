@@ -1257,3 +1257,13 @@
   .link-footer {
     color: rgba(255, 255, 255, .5);
   }
+  
+  .chip {
+    display: block;
+    background-color: #3FC1C9;
+    color: #fff;
+    padding: 2px 2px 2px 15px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }

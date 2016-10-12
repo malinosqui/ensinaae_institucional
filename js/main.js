@@ -71,7 +71,7 @@
 
 		// setCourse();
 		function setCourse(course) {
-			$('#course').val(course);
+			$('#course').text(course);
 			$('#myModal').modal('show');
 		}
 
@@ -130,7 +130,7 @@
 		};
 
 		$("#_course").easyAutocomplete(options);
-		$("#course").easyAutocomplete(optionsModal);
+		// $("#course").easyAutocomplete(optionsModal);
 
 	});
 
