@@ -184,7 +184,7 @@
 			price: $("#price option:selected").text(),
 			location: $("#location").val(),
 			level: $("#level option:selected").text(),
-			course: $("#course").val(),
+			course: $("#course").text(),
 			frequency: $('#frequency option:selected').text()
 		};
 
