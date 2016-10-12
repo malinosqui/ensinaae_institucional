@@ -65,7 +65,7 @@
 				validator.format("É permitido no mínimo {0} caracteres.")
 		});
 
-		$('.course.card').click(function () {
+		$('.course').click(function () {
 			setCourse($(this).attr('name'));
 		});
 

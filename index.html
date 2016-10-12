@@ -407,16 +407,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="row visible-lg">
 							<div class="col-lg-10">
 								<ul class="courses-footer">
-									<li>Atualidades</li>
-									<li>Biologia</li>
-									<li>Espanhol</li>
-									<li>Física</li>
-									<li>Geografia</li>
-									<li>Gramática</li>
-									<li>História</li>
-									<li>Inglês</li>
-									<li>Matemática</li>
-									<li>Redação</li>
+									<li class="course" name="Atualidades">Atualidades</li>
+									<li class="course" name="Biologia">Biologia</li>
+									<li class="course" name="Espanhol">Espanhol</li>
+									<li class="course" name="Física">Física</li>
+									<li class="course" name="Geografia">Geografia</li>
+									<li class="course" name="Gramática">Gramática</li>
+									<li class="course" name="História">História</li>
+									<li class="course" name="Inglês">Inglês</li>
+									<li class="course" name="Matemática">Matemática</li>
+									<li class="course" name="Redação">Redação</li>
 								</ul>
 							</div>
 							<div class="col-lg-2">
@@ -465,8 +465,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<div class="modal-body" id="modalForm">
 					<form action="#" id="formModal">
 						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h4>Receba um orçamento sem compromisso, é <b>GRÁTIS!</b></h4>
+							</div>
+						</div>
+						<div class="row">
 							<div class="col-lg-12">
 								<div class="row">
+									<div class="col-lg-6 col-sm-12">
+										<div class="form-group">
+											<label for="email">E-mail*</label>
+											<input type="email" class="form-control" placeholder="Entre com o seu e-mail" id="email" name="email" required>
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-12">
+										<div class="form-group">
+											<label for="name">Celular</label>
+											<input type="tel" class="form-control" placeholder="Entre com o seu celular" id="phone" name="phone">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-sm-12">
+										<div class="form-group">
+											<label for="name">Matéria*</label>
+											<input type="text" class="form-control" name="course" id="course" required>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--<div class="row">
 									<div class="col-lg-12 col-sm-12">
 										<div class="form-group">
 											<label for="name">Nome completo*</label>
@@ -566,7 +595,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									</div>
 								</div>
 							</div>
-						</div>
+						</div>-->
 					</form>
 				</div>
 				<div class="modal-body text-center" id="modalSuccess" style="display: none;">

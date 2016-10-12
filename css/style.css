@@ -1251,6 +1251,7 @@
   ul.courses-footer > li {
     display: inline;
     padding: 10px;
+    cursor: pointer;
   }
   
   .link-footer {
