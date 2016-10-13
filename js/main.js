@@ -177,15 +177,15 @@
 		var obj = {
 			name: $("#name").val(),
 			phone: $("#phone").val(),
-			usePhoneToContact: $("#phone-check").prop("checked"),
-			dateClass: $("#date").val(),
-			hourLesson: $("#hour").val(),
-			customerEmail: $("#email").val(),
-			price: $("#price option:selected").text(),
-			location: $("#location").val(),
-			level: $("#level option:selected").text(),
-			course: $("#course").text(),
-			frequency: $('#frequency option:selected').text()
+			// usePhoneToContact: $("#phone-check").prop("checked"),
+			// dateClass: $("#date").val(),
+			// hourLesson: $("#hour").val(),
+			customerEmail: $("#email").val()
+			// price: $("#price option:selected").text(),
+			// location: $("#location").val(),
+			// level: $("#level option:selected").text(),
+			// course: $("#course").text(),
+			// frequency: $('#frequency option:selected').text()
 		};
 
 		var btn = this;
